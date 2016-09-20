@@ -10,8 +10,16 @@
  
 #include <gsl/gsl_integration.h>
 #include <boost/format.hpp>
+#include "vikidtype.h"
 
 #define GRAV 6.67384E-11
+
+double rijk(double ai, double bj, double jk)
+{
+   double res = sqrt(pow(ai,2) + pow(bj,2) + pow(jk,2));
+   return res;
+}
+
 
 double sorokinForward(Body* bodies, int nBodies, XYZ station)
 {
